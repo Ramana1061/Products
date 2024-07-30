@@ -1,0 +1,19 @@
+<button class="btn btn-success but" routerLink="/create">Create New Product</button>
+<table>
+    <thead>
+        <th>Id</th><th>Name</th><th>Description</th><th>Price</th><th>Quantity</th><th>Manage</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td class="size">
+                <button type="submit" routerLink="/products/{{product.id}}" class="btn btn-primary">Update</button>
+                <button type="submit" (click)="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
